@@ -1,0 +1,28 @@
+<%= form_for @gallary, :html => {:multipart => true} do |f| %>
+  <% if @gallary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gallary.errors.count, "error") %> prohibited this gallary from being saved:</h2>
+
+      <ul>
+      <% @gallary.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  <div class="field">
+    <%= f.label :remote_image1_url %><br>
+    <%= f.text_field :remote_image1_url %>
+  </div>
+  <div class="field">
+    <%= f.label :remote_image2_url %><br>
+    <%= f.text_field :remote_image2_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
